@@ -1,15 +1,14 @@
+import json
+
 
 class Client:
     CIF = 1
-    Name = 'Default'
-    LastName = 'Default'
-    Link = 'Default'
+    Name = "Default"
+    LastName = "Default"
+    Link = "Default"
     age = 18
     isAdult = True
 
-    @staticmethod
-    def load(objeto):
-        return related.from_json(objeto, Client)
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
-    def provide(self):
-        return related.to_json(self)

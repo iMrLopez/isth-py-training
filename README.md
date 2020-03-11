@@ -8,5 +8,5 @@ run the environment
 
 virtualenv env
 ./env/Scripts/activate
-pip install -q -r requirements.txt
+pip3 install -q -r requirements.txt
 python run.py

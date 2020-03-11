@@ -3,14 +3,17 @@
 from app.infrastructure import client_repository
 
 
-def get(id):
+def get(cif):
     """Get a client"""
-    print('client_service.get')
-    return client_repository.get_client(id)
+    print("client_service.get")
+    return client_repository.get_client(cif)
 
 
 def post(client):
     """Get a client"""
-    print('client_service.post')
-    # TODO: calculate if the client is an adult and save it on isAdult
+    print("client_service.post")
+    if client.age > 17:
+        client.isAdult = True
+    else:
+        client.isAdult = False
     return client_repository.create_client(client)
